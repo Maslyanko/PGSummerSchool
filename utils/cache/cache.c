@@ -11,7 +11,7 @@
 typedef struct CacheTableEntry {
     char* key;
     char* data;
-    ListNode* listNode;    
+    ListNode* listNode;
 } CacheTableEntry;
 
 HashTable* CACHE_TABLE = NULL;
