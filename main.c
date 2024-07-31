@@ -7,6 +7,8 @@
 #include "utils/config/config.h"
 #include "utils/cache/cache.h"
 #include "utils/alloc/alloc.h"
+#include "utils/worker/worker.h"
+#include "utils/shmem/shmem.h"
 
 int main(int argc, char **argv) {
     parseConfig();
@@ -16,14 +18,20 @@ int main(int argc, char **argv) {
     Variable* pathToPluginsDir = getVariable("PATH_TO_PLUGINS_DIRECTORY");
 
     initLogger((char*)loggerPath->value, LOG_CLEAR | LOG_CYCLIC_WRITE, *(int*)logFileCapacity->value);
-
     loadSharedLibraries((char*)pathToPluginsDir->value);
     launchLibraries();
+    launchShmem();
+    launchWorkers();
+    
+    
 
+    finishWorkers();
     finishCache();
     finishCVS();
     closeSharedLibraries();
     finishLogger();
+
+
 
     myFree(pathToPluginsDir->name);
     myFree(pathToPluginsDir->value);
