@@ -1,8 +1,0 @@
-[32972]: 07/29/24, 10:57:57 [INFO] Loading shared libraries;
-[32972]: 07/29/24, 10:57:57 [INFO] helloWorld.so loaded successfully;
-[32972]: 07/29/24, 10:57:57 [INFO] End of libraries loading
-[32972]: 07/29/24, 10:57:57 [INFO] Launching shared libraries;
-[32972]: 07/29/24, 10:57:57 [INFO] End of libraries launching;
-[32972]: 07/29/24, 10:57:57 [INFO] Closing shared libraries;
-[32972]: 07/29/24, 10:57:57 [INFO] helloWorld.so unloaded successfully;
-[32972]: 07/29/24, 10:57:57 [INFO] End of closing shared libraries
